@@ -1,0 +1,45 @@
+{% include head.html %}
+
+<header>
+    <h1>{{ site.title }}</h1>
+</header>
+
+<nav>
+    <ul>
+        {% for page in site.pages %} {% if page.title and page.hidden != true %}
+        <li href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</li>
+        {% endif %} {% endfor %}
+    </ul>
+</nav>
+
+{{ content }}
+
+<footer>
+    <ul>
+        <li>
+            <a href="{{ site.repo | append: "/edit/master/" | append: page.path }}"
+                target="_blank">
+                Edit this page
+            </a>
+        </li>
+        <li>
+            <a id="bug-link"
+                href="{{ site.repo | append: "/issues/new?title=Bug+in+" | append: page.path }}"
+                target="_blank">
+                Report bug
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<script>
+    // Add user agent to bug link.
+    document.addEventListener('DOMContentLoaded', function () {
+        var link = document.getElementById('bug-link');
+        if (link === null) return;
+        link.setAttribute('href', link.getAttribute('href') +
+            '&body=User+agent%3A+' +
+            encodeURIComponent(navigator.userAgent) +
+            '%0A%0ADescribe+the+bug+here%3A%0A%0A');
+    });
+</script>
