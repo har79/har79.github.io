@@ -5,35 +5,50 @@ layout: compress
 {% include head.html %}
 
 <header>
-    <h1><a href="{% link index.md %}">{{ site.title }}</a></h1>
+    <div class="header-content">
+        <h1>
+            <a class="logo-link"
+                href="{% link index.md %}">
+                <img class="logo"
+                    src="{% link resources/logo.svg %}"
+                    alt="{{ site.title }}">
+            </a>
+        </h1>
+
+        <nav>
+            <ul class="nav-links">
+                {% for page in site.pages %} {% if page.title and page.hidden != true %}
+                <li><a href="{{ page.url | relative_url }}">{{page.title}}</a></li>
+                {% endif %} {% endfor %}
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<nav>
-    <ul>
-        {% for page in site.pages %} {% if page.title and page.hidden != true %}
-        <li><a href="{{ page.url | relative_url }}">{{page.title}}</a></li>
-        {% endif %} {% endfor %}
-    </ul>
-</nav>
-
-{{ content }}
+<main>
+    <div class="main-content">
+        {{ content }}
+    </div>
+</main>
 
 <footer>
-    <ul>
-        <li>
-            <a href="{{ site.repo | append: "/edit/master/" | append: page.path }}"
-                target="_blank">
-                Edit this page
-            </a>
-        </li>
-        <li>
-            <a id="bug-link"
-                href="{{ site.repo | append: "/issues/new?title=Bug+in+" | append: page.path }}"
-                target="_blank">
-                Report bug
-            </a>
-        </li>
-    </ul>
+    <div class="footer-content">
+        <ul>
+            <li>
+                <a href="{{ site.repo | append: "/edit/master/" | append: page.path }}"
+                    target="_blank">
+                    Edit this page
+                </a>
+            </li>
+            <li>
+                <a id="bug-link"
+                    href="{{ site.repo | append: "/issues/new?title=Bug+in+" | append: page.path }}"
+                    target="_blank">
+                    Report bug
+                </a>
+            </li>
+        </ul>
+    </div>
 </footer>
 
 <script>
