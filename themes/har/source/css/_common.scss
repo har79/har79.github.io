@@ -1,0 +1,30 @@
+@use "sass:color" as color;
+
+$primary-color: hsl(120, 67%, 32%);
+$secondary-color: hsl(300, 67%, 47%);
+
+$link-color: hsl(210, 67%, 47%);
+$visited-color: hsl(255, 67%, 62%);
+$active-color: hsl(345, 67%, 52%);
+
+@mixin color-with-hover($color) {
+	color: $color;
+
+	&:hover {
+		color: color.scale($color, $lightness: -10%);
+	}
+}
+
+a {
+	&:link {
+		@include color-with-hover($link-color);
+	}
+
+	&:visited {
+		@include color-with-hover($visited-color);
+	}
+
+	&:active {
+		color: $active-color;
+	}
+}

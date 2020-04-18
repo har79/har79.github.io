@@ -1,3 +1,4 @@
 @charset "utf-8";
 
-@import 'layout';
+@forward 'common';
+@forward 'layout';
