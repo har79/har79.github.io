@@ -5,60 +5,60 @@ layout: compress
 {% include head.html %}
 
 <header>
-    <div class="header-content">
-        <h1>
-            <a class="logo-link"
-                href="{% link index.md %}">
-                <img class="logo"
-                    src="{% link resources/logo.svg %}"
-                    alt="{{ site.title }}">
-            </a>
-        </h1>
+	<div class="header-content">
+		<h1>
+			<a class="logo-link"
+				href="{% link index.md %}">
+				<img class="logo"
+					src="{% link resources/logo.svg %}"
+					alt="{{ site.title }}">
+			</a>
+		</h1>
 
-        <nav>
-            <ul class="nav-links">
-                {% for page in site.pages %} {% if page.title and page.hidden != true %}
-                <li><a href="{{ page.url | relative_url }}">{{page.title}}</a></li>
-                {% endif %} {% endfor %}
-            </ul>
-        </nav>
-    </div>
+		<nav>
+			<ul class="nav-links">
+				{% for page in site.pages %} {% if page.title and page.hidden != true %}
+				<li><a href="{{ page.url | relative_url }}">{{page.title}}</a></li>
+				{% endif %} {% endfor %}
+			</ul>
+		</nav>
+	</div>
 </header>
 
 <main>
-    <div class="main-content">
-        {{ content }}
-    </div>
+	<div class="main-content">
+		{{ content }}
+	</div>
 </main>
 
 <footer>
-    <div class="footer-content">
-        <ul>
-            <li>
-                <a href="{{ site.repo | append: "/edit/master/" | append: page.path }}"
-                    target="_blank">
-                    Edit this page
-                </a>
-            </li>
-            <li>
-                <a id="bug-link"
-                    href="{{ site.repo | append: "/issues/new?title=Bug+in+" | append: page.path }}"
-                    target="_blank">
-                    Report bug
-                </a>
-            </li>
-        </ul>
-    </div>
+	<div class="footer-content">
+		<ul>
+			<li>
+				<a href="{{ site.repo | append: "/edit/master/" | append: page.path }}"
+					target="_blank">
+					Edit this page
+				</a>
+			</li>
+			<li>
+				<a id="bug-link"
+					href="{{ site.repo | append: "/issues/new?title=Bug+in+" | append: page.path }}"
+					target="_blank">
+					Report bug
+				</a>
+			</li>
+		</ul>
+	</div>
 </footer>
 
 <script>
-    // Add user agent to bug link.
-    document.addEventListener('DOMContentLoaded', function () {
-        var link = document.getElementById('bug-link');
-        if (link === null) return;
-        link.setAttribute('href', link.getAttribute('href') +
-            '&body=User+agent%3A+' +
-            encodeURIComponent(navigator.userAgent) +
-            '%0A%0ADescribe+the+bug+here%3A%0A%0A');
-    });
+	// Add user agent to bug link.
+	document.addEventListener('DOMContentLoaded', function () {
+		var link = document.getElementById('bug-link');
+		if (link === null) return;
+		link.setAttribute('href', link.getAttribute('href') +
+			'&body=User+agent%3A+' +
+			encodeURIComponent(navigator.userAgent) +
+			'%0A%0ADescribe+the+bug+here%3A%0A%0A');
+	});
 </script>
