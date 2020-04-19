@@ -1,2 +1,6 @@
+.log$
 .orig$
-_site/
+
+^_site/
+^dist/
+^node_modules/
