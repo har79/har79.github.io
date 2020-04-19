@@ -10,10 +10,9 @@
 
 		<nav>
 			<ul class="nav-links">
-				<% for (const page in site.pages) { %> <% if (page.title &&
-				!page.hidden) { %>
+				<% site.pages.forEach(page => { if (!page.hidden) { %>
 				<li><a href="<%- url_for(page.path) %>"><%= page.title %></a></li>
-				<% } %> <% } %>
+				<% }}) %>
 			</ul>
 		</nav>
 	</div>
