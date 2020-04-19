@@ -3,6 +3,8 @@ syntax: glob
 *.log
 *.orig
 
+db.json
+
 _site/
 dist/
 node_modules/
