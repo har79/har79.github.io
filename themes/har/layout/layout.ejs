@@ -28,19 +28,12 @@
 	<div class="footer-content">
 		<ul>
 			<li>
-				<a
-					href="<%- config.repo + '/edit/master/source/' + page.source %>"
-					target="_blank"
-				>
+				<a href="<%- config.repo + '/edit/master/source/' + page.source %>" target="_blank">
 					Edit this page
 				</a>
 			</li>
 			<li>
-				<a
-					id="bug-link"
-					href="<%- config.repo + '/issues/new?title=Bug+in+' + page.source %>"
-					target="_blank"
-				>
+				<a id="bug-link" href="<%- config.repo + '/issues/new?title=Bug+in+' + page.source %>" target="_blank">
 					Report bug
 				</a>
 			</li>
@@ -56,9 +49,9 @@
 		link.setAttribute(
 			'href',
 			link.getAttribute('href') +
-				'&body=User+agent%3A+' +
-				encodeURIComponent(navigator.userAgent) +
-				'%0A%0ADescribe+the+bug+here%3A%0A%0A',
+			'&body=User+agent%3A+' +
+			encodeURIComponent(navigator.userAgent) +
+			'%0A%0ADescribe+the+bug+here%3A%0A%0A',
 		);
 	});
 </script>
