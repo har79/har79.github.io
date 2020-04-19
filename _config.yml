@@ -95,6 +95,19 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
+# Minification
+asset_pipeline:
+  revisioning:
+    enable: false
+  clean_css:
+    enable: true
+  uglify_js:
+    enable: true
+  imagemin:
+    enable: true
+  html_minifier:
+    enable: true
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
