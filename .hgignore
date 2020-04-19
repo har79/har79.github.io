@@ -1,6 +1,8 @@
-.log$
-.orig$
+syntax: glob
 
-^_site/
-^dist/
-^node_modules/
+*.log
+*.orig
+
+_site/
+dist/
+node_modules/
