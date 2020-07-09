@@ -7,43 +7,31 @@ body {
 	width: 100vw;
 }
 
+main {
+	flex: auto;
+}
+
 header,
 main,
 footer {
 	width: 100%;
 }
 
-main {
-	flex: auto;
-}
-
 .header-content,
 .main-content,
 .footer-content {
 	margin: 0 auto;
-	max-width: $content-width;
+  max-width: $content-width;
+  padding: 1rem 0 0;
 }
 
-.header-content {
-	align-items: center;
-	display: flex;
-
-	h1 {
-		flex: none;
-		margin: 0;
-	}
-}
-
-.logo-link {
-	display: block;
-}
-
-.logo {
-	display: block;
-	height: 6rem;
-}
-
-.nav-links {
-	margin: 0;
-	display: flex;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0 0 1rem;
 }

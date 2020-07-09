@@ -1,0 +1,23 @@
+.header-content {
+	align-items: center;
+  display: flex;
+  padding: 0;
+
+	h1 {
+		flex: none;
+		margin: 0;
+	}
+}
+
+.logo-link {
+	display: block;
+}
+
+.logo {
+	display: block;
+	height: 6rem;
+}
+
+.nav-links {
+	margin: 0;
+}
