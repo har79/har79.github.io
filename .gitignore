@@ -5,6 +5,7 @@ syntax: glob
 
 # Hexo
 db.json
+public/
 
 # Logs
 logs
