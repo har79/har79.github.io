@@ -8,25 +8,25 @@ $visited: hsl(255, 67%, 62%);
 $active: hsl(345, 67%, 52%);
 
 @mixin color-with-hover($color) {
-	color: $color;
+  color: $color;
 
-	&:hover {
-		color: color.scale($color, $lightness: -20%);
+  &:hover {
+    color: color.scale($color, $lightness: -20%);
   }
-  
+
   &:active {
     color: color.scale($color, $lightness: 20%);
   }
 }
 
 a {
-	&:link {
-		@include color-with-hover($link);
-	}
+  &:link {
+    @include color-with-hover($link);
+  }
 
-	&:visited {
-		@include color-with-hover($visited);
-	}
+  &:visited {
+    @include color-with-hover($visited);
+  }
 }
 
 .logo {

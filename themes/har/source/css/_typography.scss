@@ -2,22 +2,22 @@ $font-family: Futura, ‘Century Gothic’, AppleGothic, sans-serif;
 
 @mixin title {
   font: 300 3.5rem / 4rem $font-family;
-  text-indent: calc(.8px - .1em);
+  text-indent: calc(0.8px - 0.1em);
 }
 
 @mixin heading {
   font: 2.125rem / 2.75rem $font-family;
-  text-indent: calc(.8px - .1em);
+  text-indent: calc(0.8px - 0.1em);
 }
 
 @mixin subheading {
   font: 1.625rem / 2.25rem $font-family;
-  text-indent: calc(.8px - .1em);
+  text-indent: calc(0.8px - 0.1em);
 }
 
 @mixin body {
   font: 1rem / 1.5rem $font-family;
-  text-indent: calc(.8px - .1em);
+  text-indent: calc(0.8px - 0.1em);
 }
 
 html {
