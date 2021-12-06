@@ -1,0 +1,32 @@
+@use "color";
+@use "focus";
+
+$link: color.$action;
+$visited: color.hue(255);
+
+@mixin color-with-hover($color) {
+  color: color.check-contrast($color);
+  $hover: color.check-contrast(color.darken($color, $contrast: 3));
+
+  &:hover {
+    color: $hover;
+  }
+
+  &:active {
+    @include focus.state;
+  }
+}
+
+a {
+  &:link {
+    @include color-with-hover($link);
+  }
+
+  &:visited {
+    @include color-with-hover($visited);
+  }
+}
+
+a:link.logo-link {
+  @include color-with-hover(color.$primary);
+}
