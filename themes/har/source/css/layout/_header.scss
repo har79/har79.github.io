@@ -1,0 +1,37 @@
+// @use "themes/har/source/css/color";
+@use "color";
+
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  border-bottom: 1px solid color.$border;
+}
+
+.logo-link {
+  display: block;
+
+  margin-inline: 1rem;
+  padding-inline: 1rem;
+}
+
+.logo {
+  display: block;
+
+  height: 6rem;
+  margin-block-end: -1rem;
+
+  background: linear-gradient(
+    to right,
+    transparent 57%,
+    white 62% 70%,
+    transparent 75% 83%,
+    white 88% 95%,
+    transparent
+  );
+}
+
+.nav-links {
+  margin: 0;
+}

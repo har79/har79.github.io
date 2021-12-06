@@ -1,0 +1,45 @@
+@forward "header";
+@forward "footer";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 1200px;
+
+  margin-inline: auto;
+}
+
+main {
+  flex: auto;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+
+  padding-inline: 2rem;
+}
+
+.content {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-inline: 0;
+  margin-block: 0 1rem;
+}
+
+ul {
+  padding-inline-start: 2rem;
+}
