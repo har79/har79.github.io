@@ -1,9 +1,6 @@
 @use "color";
 @use "focus";
 
-$link: color.$action;
-$visited: color.hue(255);
-
 @mixin color-with-hover($color) {
   color: color.check-contrast($color);
   $hover: color.check-contrast(color.darken($color, $contrast: 3));
@@ -19,11 +16,11 @@ $visited: color.hue(255);
 
 a {
   &:link {
-    @include color-with-hover($link);
+    @include color-with-hover(color.$action);
   }
 
   &:visited {
-    @include color-with-hover($visited);
+    @include color-with-hover(color.$visited);
   }
 }
 
