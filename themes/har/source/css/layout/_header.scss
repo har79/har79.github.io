@@ -1,10 +1,29 @@
-// @use "themes/har/source/css/color";
 @use "color";
 
-header {
+$_background: linear-gradient(
+  to right,
+  transparent 57%,
+  color.$background 62% 70%,
+  transparent 75% 83%,
+  color.$background 88% 95%,
+  transparent
+);
+
+$_logo-height: 6rem;
+$_logo-width: calc($_logo-height * 655 / 286);
+
+header,
+footer {
+  position: sticky;
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
+
+  background: color.$background;
+}
+
+header {
+  top: 0;
+  align-items: flex-end;
 
   border-bottom: 1px solid color.$border;
 }
@@ -19,19 +38,49 @@ header {
 .logo {
   display: block;
 
-  height: 6rem;
+  height: $_logo-height;
+  width: $_logo-width;
   margin-block-end: -1rem;
 
-  background: linear-gradient(
-    to right,
-    transparent 57%,
-    white 62% 70%,
-    transparent 75% 83%,
-    white 88% 95%,
-    transparent
-  );
+  background: $_background;
 }
 
 .nav-links {
+  display: flex;
+
   margin: 0;
+  padding-inline: 1rem;
+
+  list-style: none;
+
+  a {
+    display: block;
+
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+footer {
+  bottom: 0;
+  align-items: flex-start;
+
+  border-top: 1px solid color.$border;
+
+  &::after {
+    content: "";
+    height: 2px;
+    width: $_logo-width;
+
+    margin-block: -1px;
+    margin-inline: 2rem;
+
+    background: $_background;
+    transform: rotate(0.5turn);
+  }
+}
+
+.footer-links {
+  margin-block: 1rem;
+  padding-inline: 2rem;
 }

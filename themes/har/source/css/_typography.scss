@@ -1,29 +1,37 @@
+@use "sass:math";
 @use "color";
 
 $font-family: Futura, ‘Century Gothic’, AppleGothic, sans-serif;
 
-@mixin title {
+$phi: math.div(1 + math.sqrt(5), 2);
+
+@function ceil($n, $f) {
+  @return math.div(math.ceil($n * $f), $f);
+}
+
+@mixin font($scale, $weight: 400) {
+  $size: math.pow($phi, $scale) * 1rem;
+  $height: ceil($size + 0.5rem, 2);
+
   color: color.$body;
-  font: 300 3.5rem / 4rem $font-family;
+  font: $weight #{$size} / #{$height} $font-family;
   text-indent: calc(0.8px - 0.1em);
+}
+
+@mixin title {
+  @include font(2.5, $weight: 300);
 }
 
 @mixin heading {
-  color: color.$body;
-  font: 2.125rem / 2.75rem $font-family;
-  text-indent: calc(0.8px - 0.1em);
+  @include font(1.5);
 }
 
 @mixin subheading {
-  color: color.$body;
-  font: 1.625rem / 2.25rem $font-family;
-  text-indent: calc(0.8px - 0.1em);
+  @include font(1);
 }
 
 @mixin body {
-  color: color.$body;
-  font: 1rem / 1.5rem $font-family;
-  text-indent: calc(0.8px - 0.1em);
+  @include font(0);
 }
 
 html {
