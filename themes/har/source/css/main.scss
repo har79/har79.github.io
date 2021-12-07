@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 @forward "box-sizing";
-@forward "color";
-@forward "focus";
-@forward "layout";
-@forward "link";
-@forward "typography";
+
+@forward "src/layout";
+@forward "src/header";
