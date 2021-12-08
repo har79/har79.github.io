@@ -1,6 +1,90 @@
 @charset "utf-8";
 
-@forward "box-sizing";
+@forward "header";
 
-@forward "src/layout";
-@forward "src/header";
+@use "animation";
+@use "color";
+@use "state";
+@use "typography";
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+// https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+// Apply a natural box layout model to all elements, but allowing components to change.
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 1200px;
+
+  margin-inline: auto;
+
+  // TODO fade out on navigate?
+  // @include animation.fade-in;
+
+  @include typography.body;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+
+  margin-inline: -4rem;
+  padding-inline: 4rem;
+}
+
+main {
+  flex: auto;
+}
+
+.content {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-inline: 0;
+  margin-block: 0 1rem;
+}
+
+h1 {
+  @include typography.title;
+}
+
+h2 {
+  @include typography.heading;
+}
+
+h3 {
+  @include typography.subheading;
+}
+
+ul {
+  padding-inline-start: 2rem;
+}
+
+a {
+  @include state.link;
+}
+
+:focus-visible {
+  @include state.focus;
+}
