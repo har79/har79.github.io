@@ -1,0 +1,29 @@
+@use "math";
+@use "color";
+
+$font-family: Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+
+@mixin font($scale, $weight: 400) {
+  $size: math.pow(math.$phi, $scale) * 1rem;
+  $height: math.ceil($size + 0.5rem, 0.5);
+
+  color: color.$body;
+  font: $weight #{$size} / #{$height} $font-family;
+  text-indent: calc(0.8px - 0.1em);
+}
+
+@mixin title {
+  @include font(2.5, $weight: 300);
+}
+
+@mixin heading {
+  @include font(1.5);
+}
+
+@mixin subheading {
+  @include font(1);
+}
+
+@mixin body {
+  @include font(0);
+}

@@ -1,0 +1,42 @@
+@use "color";
+
+@mixin focus {
+  outline: none;
+  position: relative;
+
+  &::after {
+    $spacing: -2px;
+    content: "";
+    position: absolute;
+    top: $spacing;
+    right: $spacing;
+    bottom: $spacing;
+    left: $spacing;
+    border-radius: 4px;
+    outline: 2px solid currentColor;
+  }
+}
+
+@mixin color-with-hover($color) {
+  color: color.check-contrast($color);
+
+  &:hover {
+    color: color.check-contrast(color.darken($color, $contrast: 3));
+  }
+
+  &:active {
+    @include focus;
+  }
+}
+
+@mixin link($color: color.$action, $visited: color.$visited) {
+  &:link {
+    @include color-with-hover($color);
+  }
+
+  @if $visited {
+    &:visited {
+      @include color-with-hover($visited);
+    }
+  }
+}

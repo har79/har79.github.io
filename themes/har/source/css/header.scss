@@ -1,0 +1,109 @@
+@use "color";
+@use "layout";
+@use "state";
+@use "typography";
+
+header,
+footer {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+
+  background: color.$background;
+  border-image: layout.$section-border;
+}
+
+header {
+  top: 0;
+  align-items: flex-end;
+
+  border-bottom: layout.$border;
+  border-image-width: 0 0 1px 0;
+}
+
+.logo-link {
+  display: block;
+
+  margin-inline: 1rem;
+  padding-inline: 1rem;
+
+  @include state.link(color.$primary, $visited: null);
+}
+
+.logo {
+  display: block;
+
+  height: layout.$logo-height;
+  width: layout.$logo-width;
+  margin-block-end: -1rem;
+
+  background: layout.$logo-background;
+}
+
+.nav-links {
+  display: flex;
+
+  margin: 0;
+  padding-inline: 1rem;
+
+  @include typography.font(0.5);
+  list-style: none;
+
+  li {
+    margin-block: 0.5rem;
+
+    border-left: layout.$border;
+    border-image: linear-gradient(
+        transparent,
+        color.$border 25% 75%,
+        transparent
+      )
+      1 / 0 0 0 1px;
+
+    &:last-of-type {
+      border-right: layout.$border;
+      border-image-width: 0 1px;
+    }
+  }
+
+  a {
+    display: block;
+    min-width: 6rem;
+
+    border-radius: 2px;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+footer {
+  bottom: 0;
+  align-items: flex-start;
+
+  border-top: layout.$border;
+  border-image-width: 1px 0 0 0;
+
+  &::after {
+    content: "";
+    height: 2px;
+    width: layout.$logo-width;
+
+    margin-block: -1px;
+    margin-inline: 2rem;
+
+    background: layout.$logo-background;
+    transform: rotate(0.5turn);
+  }
+}
+
+.footer-links {
+  margin-block: 1rem;
+  padding-inline: 2rem;
+}

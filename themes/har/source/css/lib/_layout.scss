@@ -1,0 +1,24 @@
+@use "color";
+
+$border: 1px solid color.$border;
+
+$logo-background: linear-gradient(
+  to right,
+  transparent 57%,
+  color.$background 62% 70%,
+  transparent 75% 83%,
+  color.$background 88% 95%,
+  transparent
+);
+$logo-height: 6rem;
+$logo-width: calc($logo-height * 655 / 286);
+
+$side-margin: 4rem;
+
+$section-border: linear-gradient(
+    to right,
+    transparent,
+    color.$border $side-margin calc(100% - $side-margin),
+    transparent
+  )
+  1 / 0;

@@ -1,0 +1,2 @@
+sass:
+  includePaths: ["themes/har/source/css/lib"]
