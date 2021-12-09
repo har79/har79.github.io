@@ -8,7 +8,7 @@ $font-family: Futura, ‘Century Gothic’, AppleGothic, sans-serif;
   $height: math.ceil($size + 0.5rem, 0.5);
 
   color: color.$body;
-  font: $weight #{$size} / #{$height} $font-family;
+  font: $weight #{math.round($size, 0.1)} / #{$height} $font-family;
   text-indent: calc(0.8px - 0.1em);
 }
 

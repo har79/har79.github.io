@@ -27,19 +27,18 @@ body {
   width: 100vw;
   max-width: 1200px;
 
+  overflow-x: hidden;
   margin-inline: auto;
+
+  @include typography.body;
 
   // TODO fade out on navigate?
   // @include animation.fade-in;
-
-  @include typography.body;
 }
 
 header,
 main,
 footer {
-  width: 100%;
-
   margin-inline: -4rem;
   padding-inline: 4rem;
 }
