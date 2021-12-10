@@ -27,7 +27,7 @@ header {
   margin-inline: 1rem;
   padding-inline: 1rem;
 
-  @include state.link(color.$primary, $visited: null);
+  @include state.link(color.$primary, $visited: color.$primary);
 }
 
 .logo {
