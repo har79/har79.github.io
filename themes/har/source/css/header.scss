@@ -47,7 +47,6 @@ header {
   margin-inline: 1rem;
   padding-inline: 1rem;
 
-  @include typography.font(0.5);
   list-style: none;
 
   li {
