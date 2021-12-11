@@ -90,6 +90,8 @@ footer {
   border-top: layout.$border;
   border-image-width: 1px 0 0 0;
 
+  @include typography.small;
+
   &::after {
     content: "";
     height: 2px;
