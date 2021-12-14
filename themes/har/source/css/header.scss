@@ -50,13 +50,11 @@ header {
   list-style: none;
 
   li {
-    margin-block: 0.5rem;
-
     border-left: layout.$border;
     border-image: linear-gradient(
-        transparent,
-        color.$border 25% 75%,
-        transparent
+        transparent 15%,
+        color.$border 40% 60%,
+        transparent 85%
       )
       1 / 0 0 0 1px;
 
