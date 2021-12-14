@@ -1,51 +1,56 @@
 <%- partial('partial/head') %>
 
 <header>
-	<a class="logo-link" href="<%= config.url %>">
-		<%- partial('partial/logo') %>
-	</a>
+  <a class="logo-link" href="<%= config.url %>">
+    <%- partial('partial/logo') %>
+  </a>
 
-	<nav>
-		<ul class="nav-links">
-			<% site.pages.forEach(page => { if (!page.hidden) { %>
-			<li><a href="<%- url_for(page.path) %>"><%= page.title %></a></li>
-			<% }}) %>
-		</ul>
-	</nav>
+  <nav>
+    <ul class="nav-links">
+      <% site.pages.forEach(page => { if (!page.hidden) { %>
+      <li><a href="<%- url_for(page.path) %>"><%= page.title %></a></li>
+      <% }}) %>
+    </ul>
+  </nav>
 </header>
 
 <main>
-	<div class="content">
-		<%- body %>
-	</div>
+  <div class="content"><%- body %></div>
 </main>
 
 <footer>
-		<ul class="footer-links">
-			<li>
-				<a href="<%- config.repo + '/edit/master/source/' + page.source %>" target="_blank">
-					Edit this page
-				</a>
-			</li>
-			<li>
-				<a id="bug-link" href="<%- config.repo + '/issues/new?title=Bug+in+' + page.source %>" target="_blank">
-					Report bug
-				</a>
-			</li>
-		</ul>
+  <ul class="footer-links">
+    <li>
+      <a
+        href="<%- config.repo + '/edit/master/source/' + page.source %>"
+        target="_blank"
+      >
+        Edit this page
+      </a>
+    </li>
+    <li>
+      <a
+        id="bug-link"
+        href="<%- config.repo + '/issues/new?title=Bug+in+' + page.source %>"
+        target="_blank"
+      >
+        Report bug
+      </a>
+    </li>
+  </ul>
 </footer>
 
 <script>
-	// Add user agent to bug link.
-	document.addEventListener('DOMContentLoaded', function () {
-		var link = document.getElementById('bug-link');
-		if (link === null) return;
-		link.setAttribute(
-			'href',
-			link.getAttribute('href') +
-			'&body=User+agent%3A+' +
-			encodeURIComponent(navigator.userAgent) +
-			'%0A%0ADescribe+the+bug+here%3A%0A%0A',
-		);
-	});
+  // Add user agent to bug link.
+  document.addEventListener("DOMContentLoaded", function () {
+    var link = document.getElementById("bug-link");
+    if (link === null) return;
+    link.setAttribute(
+      "href",
+      link.getAttribute("href") +
+        "&body=User+agent%3A+" +
+        encodeURIComponent(navigator.userAgent) +
+        "%0A%0ADescribe+the+bug+here%3A%0A%0A"
+    );
+  });
 </script>
