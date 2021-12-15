@@ -1,11 +1,10 @@
 <%- partial('partial/head') %>
 
 <header>
-  <a class="logo-link" href="<%= config.url %>">
-    <%- partial('partial/logo') %>
-  </a>
+  <a class="logo-link" href="/"><%- partial('partial/logo') %></a>
 
   <nav>
+    <button class="nav-button" tabindex="-1"><%- fa_inline('bars') %></button>
     <ul class="nav-links">
       <% site.pages.forEach(page => { if (!page.hidden) { %>
       <li><a href="<%- url_for(page.path) %>"><%= page.title %></a></li>

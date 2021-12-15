@@ -17,6 +17,7 @@ header {
   top: 0;
   align-items: flex-end;
 
+  margin-block-end: 1rem;
   border-bottom: layout.$border;
   border-image-width: 0 0 1px 0;
 }
@@ -24,7 +25,6 @@ header {
 .logo-link {
   display: block;
 
-  margin-inline: 1rem;
   padding-inline: 1rem;
 
   @include state.link(color.$primary, $visited: color.$primary);
@@ -40,27 +40,78 @@ header {
   background: layout.$logo-background;
 }
 
+.nav-button {
+  display: none;
+
+  @include layout.mobile {
+    display: initial;
+    height: 4rem;
+    width: 4rem;
+
+    border: none;
+
+    @include state.color-with-hover(color.$body);
+    background: none;
+  }
+}
+
 .nav-links {
   display: flex;
 
   margin-block: 0;
-  margin-inline: 1rem;
   padding-inline: 1rem;
 
   list-style: none;
 
+  @include layout.mobile {
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    flex-flow: column;
+
+    padding-block: 1rem;
+    padding-inline: 0;
+
+    background: white;
+    transform: translateX(100%);
+
+    .nav:hover &,
+    nav:focus-within & {
+      transform: none;
+    }
+  }
+
   li {
     border-left: layout.$border;
-    border-image: linear-gradient(
-        transparent 15%,
-        color.$border 40% 60%,
-        transparent 85%
-      )
-      1 / 0 0 0 1px;
+    @function border($direction: top, $width: 0 0 0 1px) {
+      @return linear-gradient(
+          to $direction,
+          transparent 15%,
+          color.$border 40% 60%,
+          transparent 85%
+        )
+        1 / $width;
+    }
+    border-image: border();
+
+    @include layout.mobile {
+      border-left: none;
+      border-top: layout.$border;
+      border-image: border(right, 1px 0 0 0);
+    }
 
     &:last-of-type {
       border-right: layout.$border;
       border-image-width: 0 1px;
+
+      @include layout.mobile {
+        border-right: none;
+        border-bottom: layout.$border;
+        border-image-width: 1px 0;
+      }
     }
   }
 
@@ -84,6 +135,7 @@ header {
 footer {
   align-items: flex-start;
 
+  margin-block-start: 1rem;
   border-top: layout.$border;
   border-image-width: 1px 0 0 0;
 
@@ -95,7 +147,7 @@ footer {
     width: layout.$logo-width;
 
     margin-block: -1px;
-    margin-inline: 2rem;
+    margin-inline: 1rem;
 
     background: layout.$logo-background;
     transform: rotate(0.5turn);
@@ -104,5 +156,5 @@ footer {
 
 .footer-links {
   margin-block: 1rem;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
 }
