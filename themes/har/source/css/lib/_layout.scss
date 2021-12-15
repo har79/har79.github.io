@@ -19,12 +19,12 @@ $side-margin: 4rem;
 $section-border: linear-gradient(
     to right,
     transparent,
-    color.$border $side-margin calc(100% - $side-margin),
+    color.$border 5% 95%,
     transparent
   )
   1 / 0;
 
-$max-width: 1200px;
+$max-width: 75rem;
 
 @mixin mobile {
   @media (max-width: 40rem) {
