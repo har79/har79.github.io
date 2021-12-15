@@ -28,7 +28,11 @@ header {
 
   padding-inline: 1rem;
 
-  @include state.link(color.$primary, $visited: color.$primary);
+  @include state.link(
+    color.$primary,
+    $visited: color.$primary,
+    $internal-outline: true
+  );
 
   @include layout.mobile {
     z-index: 1; // Keep above nav menu.
@@ -45,23 +49,18 @@ header {
   background: layout.$logo-background;
 }
 
-nav {
-  @include layout.mobile {
-    flex: auto;
-  }
-}
-
 .nav-button {
   display: none;
 
   @include layout.mobile {
     display: block;
-    height: 4rem;
-    width: 4rem;
+    height: 3.5rem;
+    width: 3.5rem;
 
+    margin: 0.25rem;
     border: none;
 
-    @include state.color-with-hover(color.$icon);
+    @include state.color-with-hover(color.$icon, $internal-outline: true);
     background: none;
   }
 }
@@ -135,6 +134,8 @@ nav {
     padding-block: 0.5rem;
     padding-inline: 1rem;
 
+    @include state.link($visited: color.$action, $internal-outline: true);
+
     text-align: center;
     text-decoration: none;
 
@@ -152,21 +153,9 @@ footer {
   border-image-width: 1px 0 0 0;
 
   @include typography.small;
-
-  &::after {
-    content: "";
-    height: 2px;
-    width: layout.$logo-width;
-
-    margin-block: -1px;
-    margin-inline: 1rem;
-
-    background: layout.$logo-background;
-    transform: rotate(0.5turn);
-  }
 }
 
 .footer-links {
   margin-block: 1rem;
-  padding-inline: 1rem;
+  padding-inline: 2rem;
 }

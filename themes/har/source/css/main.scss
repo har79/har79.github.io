@@ -85,12 +85,12 @@ ul {
   padding-inline-start: 2rem;
 }
 
-a {
-  @include state.link;
+:focus-visible {
+  @include state.focus($internal-outline: true);
 }
 
-:focus-visible {
-  @include state.focus;
+a {
+  @include state.link;
 }
 
 .visually-hidden {
