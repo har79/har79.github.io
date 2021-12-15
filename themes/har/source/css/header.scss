@@ -28,6 +28,10 @@ header {
   padding-inline: 1rem;
 
   @include state.link(color.$primary, $visited: color.$primary);
+
+  @include layout.mobile {
+    z-index: 1; // Keep above nav menu.
+  }
 }
 
 .logo {
@@ -40,17 +44,23 @@ header {
   background: layout.$logo-background;
 }
 
+nav {
+  @include layout.mobile {
+    flex: auto;
+  }
+}
+
 .nav-button {
   display: none;
 
   @include layout.mobile {
-    display: initial;
+    display: block;
     height: 4rem;
     width: 4rem;
 
     border: none;
 
-    @include state.color-with-hover(color.$body);
+    @include state.color-with-hover(color.$icon);
     background: none;
   }
 }
@@ -65,18 +75,19 @@ header {
 
   @include layout.mobile {
     position: fixed;
-    top: 6rem;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 
     flex-flow: column;
 
-    padding-block: 1rem;
+    padding-block: 7rem 1rem;
     padding-inline: 0;
 
-    background: white;
+    background: linear-gradient(to bottom, transparent 5rem, white 5rem);
     transform: translateX(100%);
+    transition: transform animation.$duration;
 
     .nav:hover &,
     nav:focus-within & {
