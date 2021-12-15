@@ -1,11 +1,9 @@
 ---
-title: Home
 layout: index
+nav: Home
 ---
 
 ## Profiles
-
-[//]: # "TODO: add icons"
 
 - {% fa_inline linkedin fab %}
   [linkedin.com/in/har79/](https://www.linkedin.com/in/har79/)

@@ -5,11 +5,24 @@
 <header>
   <a class="logo-link" href="/"><%- partial('partial/logo') %></a>
 
-  <nav>
+  <nav aria-label="Main menu">
     <button class="nav-button" tabindex="-1"><%- fa_inline('bars') %></button>
     <ul class="nav-links">
       <% site.pages.forEach(page => { if (!page.hidden) { %>
-      <li><a href="<%- url_for(page.path) %>"><%= page.title %></a></li>
+      <li>
+        <% if (is_current(page.path)) { %>
+          <span class="visually-hidden">Current page:</span>
+          <span class="nav-link">
+        <% } else { %>
+          <a href="<%= url_for(page.path) %>" class="nav-link">
+        <% } %>
+            <%= page.nav || page.title %>
+        <% if (is_current(page.path)) { %>
+          </span>
+        <% } else { %>
+          </a>
+        <% } %>
+      </li>
       <% }}) %>
     </ul>
   </nav>
