@@ -28,11 +28,7 @@ header {
 
   padding-inline: 1rem;
 
-  @include state.link(
-    color.$primary,
-    $visited: color.$primary,
-    $internal-outline: true
-  );
+  @include state.link(color.$primary, $visited: null, $internal-outline: true);
 
   @include layout.mobile {
     z-index: 1; // Keep above nav menu.
@@ -134,7 +130,7 @@ header {
     padding-block: 0.5rem;
     padding-inline: 1rem;
 
-    @include state.link($visited: color.$action, $internal-outline: true);
+    @include state.link($visited: null, $internal-outline: true);
 
     text-align: center;
     text-decoration: none;

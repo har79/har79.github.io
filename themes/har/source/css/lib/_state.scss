@@ -38,13 +38,24 @@
     @include color-with-hover($color, $internal-outline: $internal-outline);
   }
 
-  @if $visited {
-    &:visited {
-      @include color-with-hover($visited, $internal-outline: $internal-outline);
-    }
+  &:visited {
+    @include color-with-hover(
+      if($visited, $visited, $color),
+      $internal-outline: $internal-outline
+    );
   }
 
-  &:focus-visible {
+  &:where(:focus-visible) {
     @include focus($internal-outline: $internal-outline);
   }
+}
+
+@mixin hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+
+  overflow: hidden;
+
+  clip: rect(0 0 0 0);
 }
