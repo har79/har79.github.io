@@ -1,8 +1,11 @@
 @use "color";
 
 @mixin focus($internal-outline: false) {
-  outline: none;
   position: relative;
+
+  -webkit-tap-highlight-color: transparent;
+
+  outline: none;
 
   &::after {
     $spacing: if($internal-outline, 2px, -2px);
