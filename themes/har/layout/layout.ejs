@@ -12,7 +12,7 @@
       <li>
         <% if (is_current(page.path)) { %>
           <span class="visually-hidden">Current page:</span>
-          <span class="nav-link">
+          <span class="nav-link current">
         <% } else { %>
           <a href="<%= url_for(page.path) %>" class="nav-link">
         <% } %>

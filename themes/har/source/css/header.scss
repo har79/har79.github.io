@@ -135,6 +135,10 @@ header {
     text-align: center;
     text-decoration: none;
 
+    &.current {
+      font-weight: 600;
+    }
+
     &:link:hover {
       text-decoration: underline;
     }
