@@ -24,6 +24,10 @@ $font-family: Futura, ‘Century Gothic’, AppleGothic, sans-serif;
   @include font(2);
 }
 
+@mixin large {
+  @include font(3);
+}
+
 @mixin body {
   @include font(1);
 }

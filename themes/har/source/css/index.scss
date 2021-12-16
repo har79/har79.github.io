@@ -1,0 +1,44 @@
+@use "color";
+@use "layout";
+@use "state";
+@use "typography";
+
+.me {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.profile {
+  height: layout.$logo-width;
+  width: layout.$logo-width;
+
+  margin-block-end: 1rem;
+  margin-inline-end: 2rem;
+  border-radius: 50%;
+}
+
+.profile-name {
+  @include typography.large;
+}
+
+.profile-links {
+  padding: 0;
+
+  list-style: none;
+}
+
+.svg-inline--fa {
+  &.svg-inline--fa {
+    width: 1em;
+  }
+
+  margin-inline-end: 0.5rem;
+
+  color: color.$icon;
+
+  vertical-align: text-bottom;
+
+  a:hover & {
+    @include state.hover(color.$icon);
+  }
+}
