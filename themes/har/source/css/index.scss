@@ -25,20 +25,8 @@
   padding: 0;
 
   list-style: none;
-}
 
-.svg-inline--fa {
-  &.svg-inline--fa {
-    width: 1em;
-  }
-
-  margin-inline-end: 0.5rem;
-
-  color: color.$icon;
-
-  vertical-align: text-bottom;
-
-  a:hover & {
-    @include state.hover(color.$icon);
+  .svg-inline--fa {
+    margin-inline-end: 0.5rem;
   }
 }

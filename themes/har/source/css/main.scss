@@ -114,3 +114,17 @@ a {
 .visually-hidden {
   @include state.hidden;
 }
+
+.svg-inline--fa {
+  &.svg-inline--fa {
+    width: 1em;
+  }
+
+  color: color.$icon;
+
+  vertical-align: text-bottom;
+
+  a:hover & {
+    @include state.hover(color.$icon);
+  }
+}
