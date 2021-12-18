@@ -6,6 +6,10 @@
 .me {
   display: flex;
   flex-flow: wrap;
+
+  > * {
+    margin-inline: 1rem;
+  }
 }
 
 .profile {
@@ -13,7 +17,6 @@
   width: layout.$logo-width;
 
   margin-block-end: 1rem;
-  margin-inline-end: 2rem;
   border-radius: 50%;
 }
 
