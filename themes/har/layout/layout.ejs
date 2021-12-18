@@ -5,7 +5,7 @@
 <header>
   <a class="logo-link" href="/"><%- partial('partial/logo') %></a>
 
-  <nav aria-label="Main menu">
+  <nav aria-label="Main menu" class="nav">
     <button class="nav-button" tabindex="-1"><%- fa_inline('bars') %></button>
     <ul class="nav-links">
       <% site.pages.forEach(page => { if (!page.hidden) { %>
