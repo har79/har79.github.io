@@ -30,7 +30,7 @@ header {
 .logo-link {
   display: block;
 
-  padding-inline: 1rem;
+  padding-inline: 0.5rem;
 
   @include state.link(color.$primary, $visited: null, $internal-outline: true);
 
@@ -60,7 +60,6 @@ nav {
   height: 4rem;
   width: 4rem;
 
-  margin-inline-end: 0.5rem;
   border: none;
   padding: 0;
 
@@ -162,11 +161,12 @@ footer {
   margin-block-start: 1rem;
   border-top: layout.$border;
   border-image-width: 1px 0 0 0;
+  padding-block: 0.5rem;
 
   @include typography.small;
 }
 
 .footer-links {
-  margin-block: 1rem;
-  padding-inline: 2rem;
+  margin-block: 0.5rem;
+  padding-inline: 1.5rem 0.5rem;
 }
