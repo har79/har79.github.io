@@ -69,6 +69,7 @@ footer {
 
 main {
   flex: auto;
+  isolation: isolate;
 
   padding-block: 1rem;
 }
