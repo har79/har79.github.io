@@ -21,7 +21,7 @@
 }
 
 .profile-name {
-  @include typography.large;
+  @include typography.title;
 }
 
 .profile-links {

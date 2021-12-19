@@ -149,7 +149,7 @@ header {
     text-decoration: none;
 
     &.current {
-      font-weight: 600;
+      @include typography.subheading;
     }
 
     &:link:hover {
