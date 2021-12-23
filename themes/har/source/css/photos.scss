@@ -1,0 +1,39 @@
+@use "animation";
+@use "color";
+@use "layout";
+@use "state";
+
+.photo-gallery {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.photo-link {
+  display: flex;
+  position: relative;
+
+  margin-block-end: 1rem;
+  margin-inline-end: 1rem;
+  border-radius: 1rem;
+
+  @include state.link($visited: null, $radius: 1rem);
+
+  &::before {
+    content: "";
+    @include layout.fit;
+
+    border-radius: inherit;
+
+    box-shadow: 2px 2px 1rem color.$border, 0 0 0.5rem 1px color.$border;
+    opacity: 0;
+    transition: animation.transition(opacity);
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  img {
+    border-radius: inherit;
+  }
+}
