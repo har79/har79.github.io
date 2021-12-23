@@ -12,3 +12,7 @@
 }
 
 $duration: 0.25s;
+
+@function transition($property) {
+  @return $property $duration ease;
+}

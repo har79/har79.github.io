@@ -30,29 +30,30 @@ header {
 
 .logo-link {
   display: block;
+  position: relative;
 
   padding-inline: 1rem 0.5rem;
 
   @include state.link(color.$primary, $visited: null, $internal-outline: true);
 
-  &::after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-
-    margin-block-end: -1px;
-
-    background: layout.$logo-background;
-  }
-
   @include layout.mobile {
     z-index: 1; // Keep above nav menu.
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: layout.$logo-width;
+    bottom: -1px;
+
+    background: layout.$logo-background;
   }
 }
 
 .logo {
   display: block;
+  position: relative;
 
   height: layout.$logo-height;
   width: layout.$logo-width;
@@ -108,7 +109,7 @@ header {
 
     background: linear-gradient(to bottom, transparent 5rem, white 5rem);
     transform: translateX(100%);
-    transition: transform animation.$duration;
+    transition: animation.transition(transform);
 
     .nav:focus-within & {
       transform: none;
