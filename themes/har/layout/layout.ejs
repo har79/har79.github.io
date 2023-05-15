@@ -6,7 +6,8 @@
   <a class="logo-link" href="/"><%- partial('partial/logo') %></a>
 
   <nav aria-label="Main menu" class="nav">
-    <button class="nav-button" tabindex="-1"><%- fa_inline('bars') %></button>
+    <!-- onclick is needed because iOS doesn't set focus in response to button touch events. -->
+    <button class="nav-button" tabindex="-1" onclick="this.focus()"><%- fa_inline('bars') %></button>
     <ul class="nav-links">
       <% site.pages.forEach(page => { if (!page.hidden) { %>
       <li>
