@@ -1,7 +1,7 @@
-@use "animation";
-@use "color";
-@use "layout";
-@use "state";
+@use "lib/animation";
+@use "lib/color";
+@use "lib/layout";
+@use "lib/state";
 
 .photo-gallery {
   display: flex;
