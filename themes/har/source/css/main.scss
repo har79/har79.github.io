@@ -27,11 +27,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100vw;
-  max-width: layout.$max-width;
 
-  overflow-x: hidden;
-  margin-inline: auto;
+  // Always show scrollbar to prevent layout jumping.
+  overflow-y: scroll;
 
   @include typography.body;
 
@@ -59,8 +57,7 @@ body {
 header,
 main,
 footer {
-  margin-inline: clamp(-4rem, (-100vw + layout.$max-width) / 2, 0px);
-  padding-inline: clamp(1rem, (1rem + 100vw - layout.$max-width) / 2, 5rem);
+  padding-inline: layout.$section-padding;
 
   @include layout.mobile {
     padding-inline: 0;

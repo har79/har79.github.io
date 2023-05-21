@@ -14,17 +14,18 @@ $logo-background: linear-gradient(
 $logo-height: 6rem;
 $logo-width: math.round(calc($logo-height * 655 / 286), 0.01);
 
-$side-margin: 4rem;
+$section-width: 75rem;
+$section-padding: calc(1rem + max(0px, (100% - $section-width) / 2));
+$border-width: $section-width + 2 * 4rem;
+$border-overflow: max(0px, (100% - $border-width) / 2);
 
 $section-border: linear-gradient(
     to right,
-    transparent,
-    color.$border 5% 95%,
-    transparent
+    transparent $border-overflow,
+    color.$border calc(5% + $border-overflow) calc(95% - $border-overflow),
+    transparent calc(100% - $border-overflow)
   )
   1 / 0;
-
-$max-width: 75rem;
 
 @mixin fit($spacing: 0) {
   position: absolute;
