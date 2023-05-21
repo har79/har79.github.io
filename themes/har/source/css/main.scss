@@ -55,7 +55,6 @@ body {
 }
 
 header,
-main,
 footer {
   padding-inline: layout.$section-padding;
 
@@ -69,10 +68,13 @@ main {
   isolation: isolate;
 
   padding-block: 1rem;
-}
 
-.content {
-  padding-inline: 1rem;
+  > :not(.fullbleed) {
+    margin-inline: layout.$section-padding;
+  }
+  > :not(.no-padding) {
+    padding-inline: 1rem;
+  }
 }
 
 h1,
