@@ -59,8 +59,7 @@ body {
 header,
 main,
 footer {
-  // TODO: 0.1px because units are required in Chrome and Sass strips units from 0px.
-  margin-inline: clamp(-4rem, (-100vw + layout.$max-width) / 2, 0.1px);
+  margin-inline: clamp(-4rem, (-100vw + layout.$max-width) / 2, 0px);
   padding-inline: clamp(1rem, (1rem + 100vw - layout.$max-width) / 2, 5rem);
 
   @include layout.mobile {

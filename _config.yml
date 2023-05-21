@@ -101,6 +101,9 @@ asset_pipeline:
     enable: false
   clean_css:
     enable: true
+    compatibility:
+      properties:
+        zeroUnits: false
   uglify_js:
     enable: true
   imagemin:
