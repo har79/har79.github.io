@@ -1,12 +1,12 @@
-@use "lib/animation";
-@use "lib/color";
-@use "lib/layout";
-@use "lib/state";
+@use "har79-theme/src/animation";
+@use "har79-theme/src/color";
+@use "har79-theme/src/layout";
+@use "har79-theme/src/state";
 
 .photo-gallery {
   display: flex;
   flex-flow: wrap;
-  
+
   gap: 0.5rem;
 }
 

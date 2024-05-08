@@ -1,7 +1,5 @@
-@use "lib/color";
-@use "lib/layout";
-@use "lib/state";
-@use "lib/typography";
+@use "har79-theme/src/layout";
+@use "har79-theme/src/typography";
 
 .me {
   display: flex;

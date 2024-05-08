@@ -92,6 +92,9 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+sass:
+  includePaths:
+    - "node_modules"
 ## Themes: https://hexo.io/themes/
 theme: har
 
