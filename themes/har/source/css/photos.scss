@@ -1,7 +1,7 @@
-@use "har79-theme/src/animation";
-@use "har79-theme/src/color";
-@use "har79-theme/src/layout";
-@use "har79-theme/src/state";
+@use "@har79/theme/build/animation";
+@use "@har79/theme/build/color";
+@use "@har79/theme/build/layout";
+@use "@har79/theme/build/state";
 
 .photo-gallery {
   display: flex;

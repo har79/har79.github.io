@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@forward "har79-theme/src/main";
-
+@forward "@har79/theme/build/main";
+@forward "header";
 @forward "index";
 @forward "photos";

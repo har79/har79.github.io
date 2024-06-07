@@ -1,0 +1,36 @@
+@use "@har79/theme/build/color";
+@use "@har79/theme/build/layout";
+@use "@har79/theme/build/state";
+@use "logo";
+
+.logo-link {
+  display: block;
+  position: relative;
+
+  padding-inline: 1rem 0.5rem;
+
+  @include state.link(color.$primary, $visited: null, $internal-outline: true);
+
+  @include layout.mobile {
+    z-index: 1; // Keep above nav menu.
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: logo.$width;
+    bottom: -1px;
+
+    background: logo.$background;
+  }
+}
+
+.logo {
+  display: block;
+  position: relative;
+
+  height: logo.$height;
+  width: logo.$width;
+  margin-block-end: -1rem;
+}
