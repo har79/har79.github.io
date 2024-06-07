@@ -1,7 +1,7 @@
-@use "@har79/theme/build/animation";
-@use "@har79/theme/build/color";
-@use "@har79/theme/build/layout";
-@use "@har79/theme/build/state";
+@use '@har79/theme/build/animation';
+@use '@har79/theme/build/color';
+@use '@har79/theme/build/layout';
+@use '@har79/theme/build/state';
 
 .photo-gallery {
   display: flex;
@@ -24,12 +24,14 @@
   @include state.link($visited: null, $radius: 1rem);
 
   &::before {
-    content: "";
+    content: '';
     @include layout.fit;
 
     border-radius: inherit;
 
-    box-shadow: 2px 2px 1rem color.$border, 0 0 0.5rem 1px color.$border;
+    box-shadow:
+      2px 2px 1rem color.$border,
+      0 0 0.5rem 1px color.$border;
     opacity: 0;
     transition: animation.transition(opacity);
   }
