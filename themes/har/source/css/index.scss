@@ -3,6 +3,7 @@
 
 .me {
   display: flex;
+
   flex-flow: wrap;
 
   > * {
@@ -27,7 +28,9 @@
 
   list-style: none;
 
+  /* stylelint-disable-next-line selector-class-pattern */
   .svg-inline--fa {
+    /* stylelint-disable-next-line selector-class-pattern */
     margin-inline-end: 0.5rem;
   }
 }
