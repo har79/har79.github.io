@@ -13,7 +13,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
-    "har79-theme": "github:har79/theme",
+    "@har79/theme": "github:har79/theme",
     "hexo": "^6.3.0",
     "hexo-asset-pipeline": "^1.8.0",
     "hexo-browsersync": "^0.3.0",
@@ -24,8 +24,7 @@
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-sass": "^0.5.0",
-    "hexo-server": "^3.0.0",
-    "normalize.css": "^8.0.1"
+    "hexo-server": "^3.0.0"
   },
   "devDependencies": {
     "npm-check-updates": ""
