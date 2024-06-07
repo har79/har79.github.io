@@ -1,7 +1,7 @@
-@use "@har79/theme/build/color";
-@use "@har79/theme/build/layout";
-@use "@har79/theme/build/state";
-@use "logo";
+@use '@har79/theme/build/color';
+@use '@har79/theme/build/layout';
+@use '@har79/theme/build/state';
+@use 'logo';
 
 .logo-link {
   display: block;
@@ -16,7 +16,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     height: 1px;
     width: logo.$width;
