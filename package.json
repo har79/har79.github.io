@@ -33,7 +33,7 @@
     "hexo-server": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^9.4.0",
+    "eslint": "^8.57.0",
     "npm-check-updates": "",
     "prettier": "^3.3.1",
     "stylelint": "^16.6.1"
