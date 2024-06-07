@@ -4,8 +4,9 @@
 @use 'logo';
 
 .logo-link {
-  display: block;
   position: relative;
+
+  display: block;
 
   padding-inline: 1rem 0.5rem;
 
@@ -17,20 +18,23 @@
 
   &::before {
     content: '';
+
     position: absolute;
+    bottom: -1px;
+
     height: 1px;
     width: logo.$width;
-    bottom: -1px;
 
     background: logo.$background;
   }
 }
 
 .logo {
-  display: block;
   position: relative;
 
+  display: block;
   height: logo.$height;
   width: logo.$width;
+
   margin-block-end: -1rem;
 }
