@@ -1,0 +1,26 @@
+<header>
+  <a class="logo-link" href="/"><%- partial('partial/logo') %></a>
+
+  <nav aria-label="Main menu" class="nav">
+    <!-- onclick is needed because iOS doesn't set focus in response to button touch events. -->
+    <button class="nav-button" tabindex="-1" onclick="this.focus()"><%- fa_inline('bars') %></button>
+    <ul class="nav-links">
+      <% site.pages.forEach(page => { if (!page.hidden) { %>
+      <li>
+        <% if (is_current(page.path)) { %>
+          <span class="visually-hidden">Current page:</span>
+          <span class="nav-link current">
+        <% } else { %>
+          <a href="<%= url_for(page.path) %>" class="nav-link">
+        <% } %>
+            <%= page.nav || page.title %>
+        <% if (is_current(page.path)) { %>
+          </span>
+        <% } else { %>
+          </a>
+        <% } %>
+      </li>
+      <% }}) %>
+    </ul>
+  </nav>
+</header>
