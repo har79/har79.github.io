@@ -1,0 +1,14 @@
+baseURL = 'https://har79.com/'
+languageCode = 'en'
+title = 'har79'
+titleCaseStyle = 'firstupper'
+[params]
+  author = "Harry Cameron"
+  description = "TODO"
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "node_modules/@fortawesome/fontawesome-free/svgs"
+    target = "assets/icons"

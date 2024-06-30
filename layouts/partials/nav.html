@@ -1,0 +1,19 @@
+<nav aria-label="Main menu" class="nav">
+  <!-- onclick is needed because iOS doesn't set focus in response to button touch events. -->
+  <button class="nav-button" tabindex="-1" onclick="this.focus()">
+    <!-- TODO: https://docs.fontawesome.com/web/add-icons/svg-bare -->
+    {{ partial "icon.html" "icons/solid/bars.svg" }}
+  </button>
+  <ul class="nav-links">
+    {{ range site.Menus.main }}
+      <li>
+        {{ if $.IsMenuCurrent .Menu . }}
+          <span class="visually-hidden">Current page:</span>
+          <span class="nav-link current">{{ .Name }}</span>
+        {{ else }}
+          <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</nav>

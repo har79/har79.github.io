@@ -4,9 +4,6 @@
 
 Set up:
 
-- Open Docker
-- Dev Environments > Create
-- Existing Git repo: https://github.com/har79/har79.github.io
 - Install npm packages: `npm i`
 
 Running:
@@ -15,4 +12,4 @@ Running:
 
 Pushing to Github Pages:
 
-- `npm deploy`
+- TODO

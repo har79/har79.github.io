@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <div class="fullbleed photo-gallery">
+    <% page.photos.forEach(photo => { %>
+    <a class="photo-link" href="<%= photo %>.jpg">
+      <img src="<%= photo %>-thumb.jpg" />
+    </a>
+    <% }) %>
+  </div>
+  </div>
+{{ end }}
