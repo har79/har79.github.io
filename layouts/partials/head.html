@@ -4,7 +4,11 @@
 <title>{{ if ne .Title .Site.Title }}{{ printf "%s – " .Title }}{{ end }}{{ .Site.Title }}</title>
 <meta
   name="description"
-	content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.Description }}{{end}}"
+  content="{{ if .Description }}
+    {{ .Description }}
+  {{ else }}
+    {{ .Site.Params.Description }}
+  {{ end }}"
 />
 
 <link rel="canonical" href="{{ .Permalink }}" />
@@ -20,5 +24,5 @@
 <meta name="theme-color" content="#1b881b" />
 
 {{ with resources.Get "css/main.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
 {{ end }}

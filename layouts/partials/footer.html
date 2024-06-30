@@ -1,10 +1,7 @@
 <footer>
   <ul class="footer-links">
     <li>
-      <a
-        href="<%- config.repo + '/edit/master/source/' + page.source %>"
-        target="_blank"
-      >
+      <a href="<%- config.repo + '/edit/master/source/' + page.source %>" target="_blank">
         Edit this page
       </a>
     </li>
@@ -22,15 +19,15 @@
 
 <script>
   // Add user agent to bug link.
-  document.addEventListener("DOMContentLoaded", function () {
-    var link = document.getElementById("bug-link");
-    if (link === null) return;
+  document.addEventListener('DOMContentLoaded', function () {
+    var link = document.getElementById('bug-link')
+    if (link === null) return
     link.setAttribute(
-      "href",
-      link.getAttribute("href") +
-        "&body=User+agent%3A+" +
+      'href',
+      link.getAttribute('href') +
+        '&body=User+agent%3A+' +
         encodeURIComponent(navigator.userAgent) +
-        "%0A%0ADescribe+the+bug+here%3A%0A%0A"
-    );
-  });
+        '%0A%0ADescribe+the+bug+here%3A%0A%0A'
+    )
+  })
 </script>

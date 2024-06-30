@@ -33,6 +33,7 @@
     transition: animation.transition(opacity);
 
     border-radius: inherit;
+
     @include color.theme-color(color.$border-key) using ($color) {
       box-shadow:
         2px 2px 1rem $color,

@@ -1,5 +1,1 @@
-<span class="fa-icon">
-  {{ with resources.Get . }}
-    {{ .Content | safeHTML }}
-  {{ end }}
-</span>
+<span class="fa-icon"> {{ with resources.Get . }}{{ .Content | safeHTML }}{{ end }} </span>
