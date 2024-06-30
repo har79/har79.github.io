@@ -1,7 +1,4 @@
 {{ define "main" }}
   <h1 class="visually-hidden">{{ .Title }}</h1>
   <p>Hello world</p>
-  <ul>
-    {{ range where site.RegularPages "Section" "articles" }}{{ .Render "card" }}{{ end }}
-  </ul>
 {{ end }}
