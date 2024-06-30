@@ -38,7 +38,7 @@
     "license-checker": "^25.0.1",
     "npm-check-updates": "",
     "prettier": "^3.3.2",
-    "prettier-plugin-go-template": "github:NiklasPor/prettier-plugin-go-template",
+    "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-jsdoc": "^1.3.0",
     "prettier-plugin-sh": "^0.14.0",
     "stylelint": "^16.6.1",
