@@ -5,9 +5,9 @@
 <meta
   name="description"
   content="{{ if .Description }}
-    {{ .Description }}
+    {{- .Description -}}
   {{ else }}
-    {{ .Site.Params.Description }}
+    {{- .Site.Params.Description -}}
   {{ end }}"
 />
 
