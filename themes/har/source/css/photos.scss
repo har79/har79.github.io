@@ -22,7 +22,7 @@
 
   border-radius: 1rem;
 
-  @include state.link($visited: null, $radius: 1rem);
+  @include state.link($visited-key: null, $radius: 1rem);
 
   &::before {
     content: '';
@@ -33,9 +33,11 @@
     transition: animation.transition(opacity);
 
     border-radius: inherit;
-    box-shadow:
-      2px 2px 1rem color.$border,
-      0 0 0.5rem 1px color.$border;
+    @include color.theme-color(color.$border-key) using ($color) {
+      box-shadow:
+        2px 2px 1rem $color,
+        0 0 0.5rem 1px $color;
+    }
   }
 
   &:hover::before {

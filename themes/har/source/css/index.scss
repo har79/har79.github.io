@@ -1,5 +1,5 @@
 @use '@har79/theme/build/typography';
-@use 'logo';
+@use 'const';
 
 .me {
   display: flex;
@@ -12,8 +12,8 @@
 }
 
 .profile {
-  height: logo.$width;
-  width: logo.$width;
+  height: const.$logo-width;
+  width: const.$logo-width;
 
   margin-block-end: 1rem;
   border-radius: 50%;
