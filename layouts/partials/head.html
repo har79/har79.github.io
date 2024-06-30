@@ -2,9 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>
-  {{ if ne .Title .Site.Title }}
-    {{- printf "%s – " .Title -}}
-  {{ end }}
+  {{- if ne .Title .Site.Title -}}
+    {{ printf "%s – " .Title }}
+  {{- end -}}
   {{- .Site.Title -}}
 </title>
 <meta
