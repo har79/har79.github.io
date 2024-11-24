@@ -1,5 +1,6 @@
 syntax: glob
 
+/assets/
 /build/
 /oss-attribution/
 /public/
