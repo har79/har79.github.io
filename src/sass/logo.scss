@@ -18,27 +18,28 @@
     z-index: 1; // Keep above nav menu.
   }
 
-  &::before {
-    content: '';
+  // Doesn't work in Chrome with .*-theme override.
+  // &::before {
+  //   content: '';
 
-    position: absolute;
-    bottom: -1px;
+  //   position: absolute;
+  //   bottom: -1px;
 
-    height: 1px;
-    width: const.$logo-width;
+  //   height: 1px;
+  //   width: const.$logo-width;
 
-    @include color.theme using ($theme) {
-      $bg: map.get($theme, 'background');
-      background: linear-gradient(
-        to right,
-        transparent 57%,
-        $bg 62% 70%,
-        transparent 75% 83%,
-        $bg 88% 95%,
-        transparent
-      );
-    }
-  }
+  //   @include color.theme using ($theme) {
+  //     $bg: map.get($theme, 'background');
+  //     background: linear-gradient(
+  //       to right,
+  //       transparent 57%,
+  //       $bg 62% 70%,
+  //       transparent 75% 83%,
+  //       $bg 88% 95%,
+  //       transparent
+  //     );
+  //   }
+  // }
 }
 
 .logo {
