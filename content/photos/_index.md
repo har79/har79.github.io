@@ -5,4 +5,4 @@ title = 'Photos'
     weight = 30
 +++
 
-<p>TODO</p>
+TODO
