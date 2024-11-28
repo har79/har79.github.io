@@ -4,4 +4,3 @@ title = 'Photos'
   [menus.main]
     weight = 30
 +++
-
