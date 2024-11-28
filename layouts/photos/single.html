@@ -5,10 +5,10 @@
     {{/* Overlay: https://gohugo.io/functions/images/overlay/ */}}
     {{ $filter := images.Text "har79" }}
     {{ range .Resources.Match "photos/*" }}
-      {{ $filtered := .Filter $filter }}
+      {{ $full := . }}
       {{ $thumb := .Resize "640x q90 Lanczos" }}
-      {{ if and $filtered $thumb }}
-        <a class="photo-link" href="{{ $filtered.RelPermalink }}">
+      {{ if and $full $thumb }}
+        <a class="photo-link" href="{{ $full.RelPermalink }}">
           <img src="{{ $thumb.RelPermalink }}" alt="" />
         </a>
       {{ end }}
