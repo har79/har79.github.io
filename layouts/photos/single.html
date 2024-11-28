@@ -2,10 +2,16 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <div class="fullbleed photo-gallery">
-    <% page.photos.forEach(photo => { %>
-    <a class="photo-link" href="<%= photo %>.jpg">
-      <img src="<%= photo %>-thumb.jpg" />
-    </a>
-    <% }) %>
+    {{/* Overlay: https://gohugo.io/functions/images/overlay/ */}}
+    {{ $filter := images.Text "har79" }}
+    {{ range .Resources.Match "photos/*" }}
+      {{ $filtered := .Filter $filter }}
+      {{ $thumb := .Resize "640x q90 Lanczos" }}
+      {{ if and $filtered $thumb }}
+        <a class="photo-link" href="{{ $filtered.RelPermalink }}">
+          <img src="{{ $thumb.RelPermalink }}" alt="" />
+        </a>
+      {{ end }}
+    {{ end }}
   </div>
 {{ end }}
