@@ -4,6 +4,7 @@ syntax: glob
 /build/
 /oss-attribution/
 /public/
+/resources/_gen/
 
 # Editors
 *.code-workspace
