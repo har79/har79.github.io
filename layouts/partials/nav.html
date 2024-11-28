@@ -1,6 +1,7 @@
 <nav aria-label="Main menu" class="nav">
   {{/* onclick is needed because iOS doesn't set focus in response to button
-  touch events. */}}
+    touch events.
+  */}}
   <button class="nav-button" tabindex="-1" onclick="this.focus()">
     <!-- TODO: https://docs.fontawesome.com/web/add-icons/svg-bare -->
     {{ partial "icon.html" "icons/solid/bars.svg" }}

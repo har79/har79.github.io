@@ -1,12 +1,14 @@
 <!doctype html>
 {{ partial "head.html" . }}
 
+
 <body class="light-theme">
-<a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-{{ partial "header.html" . }}
+  {{ partial "header.html" . }}
 
 
-<main id="main">{{ block "main" . }}{{ end }}</main>
+  <main id="main">{{ block "main" . }}{{ end }}</main>
 
-{{ partial "footer.html" . }}
+  {{ partial "footer.html" . }}
+</body>
