@@ -1,0 +1,36 @@
+@use '@har79/theme/build/typography';
+@use 'const';
+
+.me {
+  display: flex;
+
+  flex-flow: wrap;
+
+  > * {
+    margin-inline: 1rem;
+  }
+}
+
+.profile {
+  // Display
+  height: const.$logo-width;
+  width: const.$logo-width;
+
+  // Box model
+  margin-block-end: 1rem;
+  border-radius: 50%;
+}
+
+.profile-name {
+  @include typography.title;
+}
+
+.profile-links {
+  padding: 0;
+
+  list-style: none;
+
+  .fa-icon {
+    margin-inline-end: 0.5rem;
+  }
+}

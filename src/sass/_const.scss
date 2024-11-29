@@ -1,0 +1,4 @@
+@use '@har79/theme/build/math';
+
+$logo-height: 6rem;
+$logo-width: math.round(calc($logo-height * 655 / 286), 0.01);

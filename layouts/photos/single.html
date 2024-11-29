@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <div class="fullbleed photo-gallery">
+    {{/* Overlay: https://gohugo.io/functions/images/overlay/ */}}
+    {{ $filter := images.Text "har79" }}
+    {{ range .Resources.Match "photos/*" }}
+      {{ $full := . }}
+      {{ $thumb := .Resize "640x q90 Lanczos" }}
+      {{ if and $full $thumb }}
+        <a class="photo-link" href="{{ $full.RelPermalink }}">
+          <img src="{{ $thumb.RelPermalink }}" alt="" />
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

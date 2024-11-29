@@ -1,0 +1,53 @@
+@use '@har79/theme/build/color';
+@use '@har79/theme/build/layout';
+@use '@har79/theme/build/math';
+@use '@har79/theme/build/state';
+@use 'sass:map';
+@use 'const';
+
+.logo-link {
+  position: relative;
+
+  display: block;
+
+  padding-inline: 1rem 0.5rem;
+
+  @include state.link(color.$primary-key, $visited-key: null, $internal-outline: true);
+
+  @include layout.mobile {
+    z-index: 1; // Keep above nav menu.
+  }
+
+  // Doesn't work in Chrome with .*-theme override.
+  // &::before {
+  //   content: '';
+
+  //   position: absolute;
+  //   bottom: -1px;
+
+  //   height: 1px;
+  //   width: const.$logo-width;
+
+  //   @include color.theme using ($theme) {
+  //     $bg: map.get($theme, 'background');
+  //     background: linear-gradient(
+  //       to right,
+  //       transparent 57%,
+  //       $bg 62% 70%,
+  //       transparent 75% 83%,
+  //       $bg 88% 95%,
+  //       transparent
+  //     );
+  //   }
+  // }
+}
+
+.logo {
+  position: relative;
+
+  display: block;
+  height: const.$logo-height;
+  width: const.$logo-width;
+
+  margin-block-end: -1rem;
+}
