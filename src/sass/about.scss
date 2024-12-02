@@ -2,11 +2,14 @@
 @use 'const';
 
 .me {
+  // Display
   display: flex;
 
+  // Box
   flex-flow: wrap;
 
   > * {
+    // Box
     margin-inline: 1rem;
   }
 }
@@ -16,21 +19,33 @@
   height: const.$logo-width;
   width: const.$logo-width;
 
-  // Box model
+  // Box
   margin-block-end: 1rem;
   border-radius: 50%;
 }
 
 .profile-name {
+  // Decoration
   @include typography.title;
 }
 
 .profile-links {
+  // Box
   padding: 0;
 
+  // Decoration
   list-style: none;
+}
+
+.profile-link {
+  // Display
+  display: inline-flex;
+
+  // Box
+  align-items: center;
 
   .fa-icon {
+    // Box
     margin-inline-end: 0.5rem;
   }
 }
