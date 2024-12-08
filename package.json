@@ -21,8 +21,6 @@
     "license:check": "license-checker --production --onlyAllow 'MIT;ISC;Apache-2.0' --excludePrivatePackages",
     "license:attribution": "generate-attribution",
     "license": "npm run license:check && npm run license:attribution",
-    "update:check": "npm-check-updates",
-    "update": "npm-check-updates --peer -u && npm update",
     "preversion": "npm run license:check && npm run fix && [ -z \"$(git status --porcelain)\" ]",
     "postversion": "git push && git push --tags",
     "prepare": "npm run clean && npm run license:check && npm run build",
