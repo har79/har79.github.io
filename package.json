@@ -1,7 +1,7 @@
 {
   "name": "@har79/web",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "TODO",
   "license": "Apache-2.0",
   "author": {
@@ -35,8 +35,8 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
-    "@har79/config": "github:har79/config",
-    "@har79/theme": "github:har79/theme",
+    "@har79/config": "^6.2.1",
+    "@har79/theme": "^0.6.4",
     "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
     "license-checker": "^25.0.1",
     "npm-check-updates": "",

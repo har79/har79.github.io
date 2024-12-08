@@ -10,8 +10,15 @@
     {{ range site.Menus.main }}
       {{ if .HasChildren }}
         <li class="nav-group">
-          {{ partial "nav-item.html" (dict "context" . "page" $ "hasDropdown" true) }}
+          {{/* {{ partial "nav-item.html" (dict "context" . "page" $ "hasDropdown" true) }} */}}
+          <button class="nav-link">
+            {{ .Name }}
+            {{ partial "nav-dropdown.html" true }}
+          </button>
           <ul>
+            <li>
+              <a href="{{ .URL }}" class="nav-link">All</a>
+            </li>
             {{ range .Children }}
               <li>
                 {{ partial "nav-item.html" (dict "context" . "page" $) }}
