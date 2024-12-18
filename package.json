@@ -13,6 +13,9 @@
     "type": "git",
     "url": "https://github.com/har79/har79.github.io"
   },
+  "files": [
+    "public"
+  ],
   "scripts": {
     "clean": "rm -r build coverage dist lib oss-attribution public *.tsbuildinfo ||:",
     "fix:format": "prettier --write .",
