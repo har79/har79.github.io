@@ -1,1 +1,16 @@
-node_modules/@har79/config/.depcheckrc
+ignores: [
+  "@babel/register",
+  "@babel/runtime",
+  "@fortawesome/fontawesome-free",
+  "@har79/config",
+  "@har79/dice-app",
+  "@ianvs/prettier-plugin-sort-imports",
+  "@types/jest",
+  "babel-loader",
+  "css-loader",
+  "eslint-plugin-react",
+  "prettier-*",
+  "sass-loader",
+  "src",
+  "stylelint-config-standard-scss"
+]
