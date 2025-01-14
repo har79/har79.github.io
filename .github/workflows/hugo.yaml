@@ -40,6 +40,8 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 9
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -49,7 +51,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
-        run: 'pnpm install || true'
+        run: 'pnpm install --no-frozen-lockfile || true'
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
