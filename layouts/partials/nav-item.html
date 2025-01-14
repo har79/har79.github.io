@@ -1,20 +1,15 @@
-{{ with .context }}
-  {{ if $.page.IsMenuCurrent .Menu . }}
-    <span class="visually-hidden">Current page:</span>
-    <span class="nav-link current">
-      {{ .Name }}
-      {{ partial "nav-dropdown.html" $.hasDropdown }}
-    </span>
-  {{ else if $.page.HasMenuCurrent .Menu . }}
-    <span class="visually-hidden">Current section:</span>
-    <a href="{{ .URL }}" class="nav-link current">
-      {{ .Name }}
-      {{ partial "nav-dropdown.html" $.hasDropdown }}
-    </a>
-  {{ else }}
-    <a href="{{ .URL }}" class="nav-link">
-      {{ .Name }}
-      {{ partial "nav-dropdown.html" $.hasDropdown }}
-    </a>
-  {{ end }}
-{{ end }}
+{{ with .context }} {{ if $.page.IsMenuCurrent .Menu . }}
+<span class="visually-hidden">Current page:</span>
+<span class="nav-link current">
+  {{ .Name }} {{ partial "nav-dropdown.html" $.hasDropdown }}
+</span>
+{{ else if $.page.HasMenuCurrent .Menu . }}
+<span class="visually-hidden">Current section:</span>
+<a href="{{ .URL }}" class="nav-link current">
+  {{ .Name }} {{ partial "nav-dropdown.html" $.hasDropdown }}
+</a>
+{{ else }}
+<a href="{{ .URL }}" class="nav-link">
+  {{ .Name }} {{ partial "nav-dropdown.html" $.hasDropdown }}
+</a>
+{{ end }} {{ end }}

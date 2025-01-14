@@ -1,7 +1,7 @@
 {
   "name": "@har79/web",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "TODO",
   "license": "Apache-2.0",
   "author": {
@@ -13,16 +13,18 @@
     "type": "git",
     "url": "https://github.com/har79/har79.github.io"
   },
+  "files": [
+    "public"
+  ],
   "scripts": {
     "clean": "rm -r build coverage dist lib oss-attribution public *.tsbuildinfo ||:",
+    "fix:depcheck": "depcheck",
     "fix:format": "prettier --write .",
     "fix:style": "stylelint '**/*.scss'",
-    "fix": "npm run fix:format && npm run fix:style",
+    "fix": "npm run fix:depcheck && npm run fix:style && npm run fix:format",
     "license:check": "license-checker --production --onlyAllow 'MIT;ISC;Apache-2.0' --excludePrivatePackages",
     "license:attribution": "generate-attribution",
     "license": "npm run license:check && npm run license:attribution",
-    "update": "npm-check-updates --peer -u && npm update",
-    "update:check": "npm-check-updates",
     "preversion": "npm run license:check && npm run fix && [ -z \"$(git status --porcelain)\" ]",
     "postversion": "git push && git push --tags",
     "prepare": "npm run clean && npm run license:check && npm run build",
@@ -34,19 +36,21 @@
     "start": "npm-run-all --parallel start:*"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.2",
-    "@har79/config": "^6.2.1",
-    "@har79/theme": "^0.6.4",
-    "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@har79/config": "workspace:^",
+    "@har79/dice-app": "workspace:^",
+    "@har79/theme": "workspace:^",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "depcheck": "^1.4.7",
     "license-checker": "^25.0.1",
-    "npm-check-updates": "",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.3.2",
+    "prettier": "^3.4.2",
     "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-jsdoc": "^1.3.0",
+    "prettier-plugin-jsdoc": "^1.3.2",
     "prettier-plugin-sh": "^0.14.0",
-    "sass": "^1.81.0",
-    "stylelint": "^16.6.1",
-    "stylelint-config-standard-scss": "^13.1.0"
-  }
+    "sass": "^1.83.2",
+    "stylelint": "^16.13.1",
+    "stylelint-config-standard-scss": "^14.0.0"
+  },
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }

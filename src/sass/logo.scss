@@ -12,7 +12,11 @@
 
   padding-inline: 1rem 0.5rem;
 
-  @include state.link(color.$primary-key, $visited-key: null, $internal-outline: true);
+  @include state.link(
+    color.$primary-key,
+    $visited-key: null,
+    $internal-outline: true
+  );
 
   @include layout.mobile {
     z-index: 1; // Keep above nav menu.

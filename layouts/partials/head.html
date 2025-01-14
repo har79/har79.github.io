@@ -2,10 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>
-  {{- if ne .Title .Site.Title -}}
-    {{ printf "%s – " .Title }}
-  {{- end -}}
-  {{- .Site.Title -}}
+  {{- if ne .Title .Site.Title -}} {{ printf "%s – " .Title }} {{- end -}} {{-
+  .Site.Title -}}
 </title>
 <meta
   name="description"
@@ -29,5 +27,9 @@
 <meta name="theme-color" content="#1b881b" />
 
 {{ with resources.Get "css/main.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
+<link
+  rel="stylesheet"
+  href="{{ .RelPermalink }}"
+  integrity="{{ .Data.Integrity }}"
+/>
 {{ end }}
