@@ -17,7 +17,7 @@
     "public"
   ],
   "scripts": {
-    "clean": "rm -r build coverage dist lib oss-attribution public *.tsbuildinfo ||:",
+    "clean": "rm -r build coverage dist lib oss-attribution public resources *.tsbuildinfo ||:",
     "fix:depcheck": "depcheck",
     "fix:format": "prettier --write .",
     "fix:style": "stylelint '**/*.scss'",
