@@ -1,4 +1,4 @@
-const common = require('./common.config.cjs')
+const common = require('./options.config.cjs')
 
 module.exports = {
   arrowParens: 'avoid',
