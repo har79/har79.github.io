@@ -1,5 +1,17 @@
-<header>
-  <a class="logo-link" href="/">{{ partial "logo.html" }}</a>
+<div id="header-scroll-sentinel"></div>
+<header id="header" class="header-container">
+  <div class="header-content">
+    <a class="logo-link" href="/">{{ partial "logo.html" }}</a>
 
-  {{ partial "nav.html" . }}
+    {{ partial "nav.html" . }}
+  </div>
 </header>
+<script>
+  const sentinel = document.querySelector('#header-scroll-sentinel')
+  const header = document.querySelector('#header')
+  const observer = new IntersectionObserver(
+    ([e]) => void header.classList.toggle('stuck', e.intersectionRatio < 1),
+    {threshold: [1]}
+  )
+  observer.observe(sentinel)
+</script>

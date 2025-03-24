@@ -1,29 +1,48 @@
 <nav aria-label="Main menu" class="nav">
   {{/* onclick is needed because iOS doesn't set focus in response to button
-  touch events. */}}
+    touch events.
+  */}}
   <button class="nav-button" tabindex="-1" onclick="this.focus()">
     <!-- TODO: https://docs.fontawesome.com/web/add-icons/svg-bare -->
     {{ partial "icon.html" "icons/solid/bars.svg" }}
   </button>
   <ul class="nav-links">
-    {{ range site.Menus.main }} {{ if .HasChildren }}
-    <li class="nav-group">
-      {{/* {{ partial "nav-item.html" (dict "context" . "page" $ "hasDropdown"
-      true) }} */}}
-      <button class="nav-link">
-        {{ .Name }} {{ partial "nav-dropdown.html" true }}
-      </button>
-      <ul>
-        <li>
-          <a href="{{ .URL }}" class="nav-link">All</a>
+    {{ range site.Menus.main }}
+      {{ if .HasChildren }}
+        <li class="nav-group">
+          {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+            <span class="visually-hidden">Current parent:</span>
+            <button class="nav-link current" onclick="this.focus()">
+              {{ .Name }}
+              {{ partial "nav-dropdown.html" }}
+            </button>
+          {{ else }}
+            <button class="nav-link" onclick="this.focus()">
+              {{ .Name }}
+              {{ partial "nav-dropdown.html" }}
+            </button>
+          {{ end }}
+          <div class="nav-dropdown">
+            <ul>
+              <li>
+                {{ if $.IsMenuCurrent .Menu . }}
+                  <span class="visually-hidden">Current parent:</span>
+                  <a href="{{ .URL }}" class="nav-link current">All</a>
+                {{ else }}
+                  <a href="{{ .URL }}" class="nav-link">All</a>
+                {{ end }}
+              </li>
+              {{ range .Children }}
+                <li>
+                  {{ partial "nav-item.html" (dict "context" . "page" $) }}
+                </li>
+              {{ end }}
+            </ul>
+          </div>
         </li>
-        {{ range .Children }}
+      {{ else }}
         <li>{{ partial "nav-item.html" (dict "context" . "page" $) }}</li>
-        {{ end }}
-      </ul>
-    </li>
-    {{ else }}
-    <li>{{ partial "nav-item.html" (dict "context" . "page" $) }}</li>
-    {{ end }} {{ end }}
+      {{ end }}
+    {{ end }}
   </ul>
 </nav>
