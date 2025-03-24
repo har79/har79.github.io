@@ -1,20 +1,35 @@
 {{ with .context }}
-  {{ if $.page.IsMenuCurrent .Menu . }}
-    <span class="visually-hidden">Current page:</span>
-    <span class="nav-link current">
-      {{ .Name }}
-      {{ partial "nav-dropdown.html" $.hasDropdown }}
-    </span>
-  {{ else if $.page.HasMenuCurrent .Menu . }}
-    <span class="visually-hidden">Current section:</span>
-    <a href="{{ .URL }}" class="nav-link current">
-      {{ .Name }}
-      {{ partial "nav-dropdown.html" $.hasDropdown }}
-    </a>
+  {{ if .HasChildren }}
+    {{ if $.page.IsMenuCurrent .Menu . }}
+      <span class="visually-hidden">Current page:</span>
+      <span class="nav-link current">
+        {{ .Name }}
+      </span>
+    {{ else if $.page.HasMenuCurrent .Menu . }}
+      <span class="visually-hidden">Current section:</span>
+      <a href="{{ .URL }}" class="nav-link current">
+        {{ .Name }}
+      </a>
+    {{ else }}
+      <a href="{{ .URL }}" class="nav-link">
+        {{ .Name }}
+      </a>
+    {{ end }}
+    <ul>
+      {{ range .Children }}
+        <li>{{ partial "nav-item.html" (dict "context" . "page" $.page) }}</li>
+      {{ end }}
+    </ul>
   {{ else }}
-    <a href="{{ .URL }}" class="nav-link">
-      {{ .Name }}
-      {{ partial "nav-dropdown.html" $.hasDropdown }}
-    </a>
+    {{ if $.page.IsMenuCurrent .Menu . }}
+      <span class="visually-hidden">Current page:</span>
+      <span class="nav-link current">
+        {{ .Name }}
+      </span>
+    {{ else }}
+      <a href="{{ .URL }}" class="nav-link">
+        {{ .Name }}
+      </a>
+    {{ end }}
   {{ end }}
 {{ end }}

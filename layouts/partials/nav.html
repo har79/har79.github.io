@@ -10,22 +10,35 @@
     {{ range site.Menus.main }}
       {{ if .HasChildren }}
         <li class="nav-group">
-          {{/* {{ partial "nav-item.html" (dict "context" . "page" $ "hasDropdown"
-            true)
-          }}
-          */}}
-          <button class="nav-link">
-            {{ .Name }}
-            {{ partial "nav-dropdown.html" true }}
-          </button>
-          <ul>
-            <li>
-              <a href="{{ .URL }}" class="nav-link">All</a>
-            </li>
-            {{ range .Children }}
-              <li>{{ partial "nav-item.html" (dict "context" . "page" $) }}</li>
-            {{ end }}
-          </ul>
+          {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+            <span class="visually-hidden">Current parent:</span>
+            <button class="nav-link current" onclick="this.focus()">
+              {{ .Name }}
+              {{ partial "nav-dropdown.html" }}
+            </button>
+          {{ else }}
+            <button class="nav-link" onclick="this.focus()">
+              {{ .Name }}
+              {{ partial "nav-dropdown.html" }}
+            </button>
+          {{ end }}
+          <div class="nav-dropdown">
+            <ul>
+              <li>
+                {{ if $.IsMenuCurrent .Menu . }}
+                  <span class="visually-hidden">Current parent:</span>
+                  <a href="{{ .URL }}" class="nav-link current">All</a>
+                {{ else }}
+                  <a href="{{ .URL }}" class="nav-link">All</a>
+                {{ end }}
+              </li>
+              {{ range .Children }}
+                <li>
+                  {{ partial "nav-item.html" (dict "context" . "page" $) }}
+                </li>
+              {{ end }}
+            </ul>
+          </div>
         </li>
       {{ else }}
         <li>{{ partial "nav-item.html" (dict "context" . "page" $) }}</li>
