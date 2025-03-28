@@ -12,7 +12,11 @@
         <li class="nav-group">
           {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
             <span class="visually-hidden">Current parent:</span>
-            <button class="nav-link current" tabindex="-1" onclick="this.focus()">
+            <button
+              class="nav-link current"
+              tabindex="-1"
+              onclick="this.focus()"
+            >
               {{ .Name }}
               {{ partial "nav-dropdown.html" }}
             </button>
