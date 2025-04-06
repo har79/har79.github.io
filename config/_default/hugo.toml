@@ -10,6 +10,9 @@ titleCaseStyle = 'firstupper'
     source = "assets"
     target = "assets"
   [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
     source = "node_modules/@fortawesome/fontawesome-free/svgs"
     target = "assets/icons"
   [[module.mounts]]
