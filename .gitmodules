@@ -1,0 +1,3 @@
+[submodule "content/photos"]
+	path = content/photos
+	url = git@github.com:har79/photos.git
