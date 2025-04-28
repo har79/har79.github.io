@@ -1,5 +1,9 @@
 @charset 'utf-8';
-@forward '@har79/theme/build/main';
+@forward '@har79/theme/build/main' with ($header-height: 5rem);
 @forward 'logo';
 @forward 'about';
 @forward 'photos';
+
+#main {
+  margin-block-start: 1rem;
+}
