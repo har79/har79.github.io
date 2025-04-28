@@ -7,7 +7,7 @@
       images.Text "har79"
     }}
     {{ range .Resources.Match "*.jpg" }}
-      {{ $full := . }}
+      {{ $full := .Fit "3840x3840 q100 Lanczos" }}
       {{ $thumb := .Resize "x480 q90 Lanczos" }}
       {{ $height := 480 }}
       {{ $width := math.Div (math.Mul 480 .Width) .Height }}
