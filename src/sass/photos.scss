@@ -12,13 +12,11 @@
 
 .photo-link {
   position: relative;
-  flex: auto;
 
   display: flex;
-  width: 480px;
-  min-width: 320px;
-  max-width: 640px;
-  aspect-ratio: 16/9;
+  flex: var(--width) var(--width) calc(var(--width) * 0.618px);
+  max-width: calc(var(--width) * 1px);
+  aspect-ratio: var(--width) / var(--height);
 
   border-radius: 1rem;
 
