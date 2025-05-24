@@ -1,5 +1,5 @@
 baseURL = 'https://har79.com/'
-languageCode = 'en'
+languageCode = 'en-gb'
 title = 'har79'
 titleCaseStyle = 'firstupper'
 [params]
