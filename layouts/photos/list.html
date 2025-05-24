@@ -1,11 +1,33 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  <div>
+
+  {{ .Content }}
+
+  {{ range .Pages }}
+    <h2>
+      <a href="{{ .RelPermalink }}">
+        <strong>{{ .LinkTitle }}</strong>
+        {{ partial "date.html" (dict "context" . "day" false) }}
+      </a>
+    </h2>
     {{ .Content }}
-    <ul>
-      {{ range .Pages }}
-        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+    <div class="fullbleed photo-gallery">
+      {{ range first 3 (.Resources.Match "*.jpg") }}
+      {{ $full := .Fit "3840x3840 q100 Lanczos" }}
+      {{ $thumb := .Resize "x480 q90 Lanczos" }}
+      {{ $height := 480 }}
+      {{ $width := math.Div (math.Mul 480 .Width) .Height }}
+      {{ if and $full $thumb }}
+        <a
+          class="photo-link"
+          href="{{ $full.RelPermalink }}"
+          style="--width: {{ $width }}; --height: {{ $height }};"
+        >
+          <img src="{{ $thumb.RelPermalink }}" alt="" />
+        </a>
       {{ end }}
-    </ul>
-  </div>
+    {{ end }}
+          <div>...</div>
+    </div>
+  {{ end }}
 {{ end }}
