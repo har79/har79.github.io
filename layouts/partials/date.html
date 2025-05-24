@@ -1,0 +1,9 @@
+{{ with .context }}
+  <span class="date">
+    {{ if default true $.day }}
+      {{ .Date.Format "2" | humanize }}
+    {{ end }}
+    {{ .Date.Format "January" }}
+    {{ .Date.Format "2006" }}
+  </span>
+{{ end }}
