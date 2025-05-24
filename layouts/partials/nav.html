@@ -7,10 +7,15 @@
     {{ partial "icon.html" "icons/solid/bars.svg" }}
   </button>
   <ul class="nav-links">
-    {{ range site.Menus.main }}
-      {{ if .HasChildren }}
+    <li>
+      {{ partial "nav-item.html" (dict "context" site.Home "page" $
+        "recurse" false)
+      }}
+    </li>
+    {{ range site.Sections }}
+      {{ if gt (.Pages | len) 0 }}
         <li class="nav-group">
-          {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+          {{ if or (.IsAncestor $) (eq . $) }}
             <span class="visually-hidden">Current parent:</span>
             <button
               class="nav-link current"
@@ -29,14 +34,14 @@
           <div class="nav-dropdown">
             <ul>
               <li>
-                {{ if $.IsMenuCurrent .Menu . }}
+                {{ if eq . $ }}
                   <span class="visually-hidden">Current parent:</span>
-                  <a href="{{ .URL }}" class="nav-link current">All</a>
+                  <a href="{{ .RelPermalink }}" class="nav-link current">All</a>
                 {{ else }}
-                  <a href="{{ .URL }}" class="nav-link">All</a>
+                  <a href="{{ .RelPermalink }}" class="nav-link">All</a>
                 {{ end }}
               </li>
-              {{ range .Children }}
+              {{ range .Pages }}
                 <li>
                   {{ partial "nav-item.html" (dict "context" . "page" $) }}
                 </li>
