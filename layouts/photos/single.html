@@ -1,20 +1,23 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <h1>
+    <strong>{{ .Title }}</strong>
+    {{ partial "date.html" (dict "context" . "day" false) }}
+  </h1>
   {{ .Content }}
   <div class="fullbleed photo-gallery">
     {{/* Overlay: https://gohugo.io/functions/images/overlay/ */}}
-    {{ $filter :=
-      images.Text "har79"
-    }}
+    {{/* $filter := images.Text "har79" */}}
     {{ range .Resources.Match "*.jpg" }}
       {{ $full := .Fit "3840x3840 q100 Lanczos" }}
       {{ $thumb := .Resize "x480 q90 Lanczos" }}
       {{ $height := 480 }}
       {{ $width := math.Div (math.Mul 480 .Width) .Height }}
       {{ if and $full $thumb }}
-        <a class="photo-link"
-           href="{{ $full.RelPermalink }}"
-           style="--width: {{ $width }}; --height: {{ $height }};">
+        <a
+          class="photo-link"
+          href="{{ $full.RelPermalink }}"
+          style="--width: {{ $width }}; --height: {{ $height }};"
+        >
           <img src="{{ $thumb.RelPermalink }}" alt="" />
         </a>
       {{ end }}

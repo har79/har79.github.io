@@ -1,9 +1,32 @@
 @charset 'utf-8';
-@forward '@har79/theme/build/main' with ($header-height: 5rem);
+@forward '@har79/theme/build/main' with (
+  $header-height: 5rem
+);
 @forward 'logo';
 @forward 'about';
 @forward 'photos';
 
+@use '@har79/theme/src/typography';
+
 #main {
   margin-block-start: 1rem;
+}
+
+h1,
+h2 {
+  strong {
+    font-weight: normal;
+  }
+
+  .date::before {
+    content: '—';
+  }
+}
+
+h1 .date {
+  @include typography.subheading($weight: typography.$weight-normal, $set-color: false);
+}
+
+h2 .date {
+  @include typography.section-heading($weight: typography.$weight-normal, $set-color: false);
 }
